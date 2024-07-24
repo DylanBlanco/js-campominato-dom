@@ -1,23 +1,6 @@
-/*
-// condizione fine gioco
-if (partitanonterminata) {
-    const numberIncell = parseInt(this.innerText);
-    console.log(numberIncell);
-    // condizione bombs
-    if (bombs.include(numberIncell)) {
-        this.classList.add(`bomb`);
-    }
-    else {
-        this.classList.add(`not-bomb`);
-    }
-}
-else {
-    alert (`partita terminata`);
-}
-
-*/
-
 const generate = document.getElementById(`generate`);
+
+let points = 0;
 
 generate.addEventListener(`click`,function (event) {
     //blocca comportamento di default
@@ -44,8 +27,6 @@ generate.addEventListener(`click`,function (event) {
         const newCell = document.createElement(`div`);
         newCell.innerHTML = i;
 
-        newCell.classList.add(`cell-` + cellsNumber);
-
         // funzione click
         newCell.addEventListener(`click`, function () {        
             //this.classList.toggle(`lightcoral`);
@@ -60,6 +41,8 @@ generate.addEventListener(`click`,function (event) {
             }
             else {
                 this.classList.add(`not-bomb`);
+                points += 1;
+                console.log(`punteggio:`, points);
             }
         });
         cellsContainer.append(newCell);
