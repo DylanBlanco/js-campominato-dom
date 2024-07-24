@@ -6,3 +6,68 @@ RESET
     padding: 0;
     box-sizing: border-box;
 }
+
+/***************
+COLOR
+***************/
+.cells-container div {
+    background-color: beige;
+}
+
+.cells-container > .lightcoral {
+    background-color: lightcoral;
+}
+
+main {
+    background-color: #404449;
+}
+/***************
+GENERAL
+***************/
+.container {
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.container {
+    width: 90%;
+    padding: 20px 0;
+}
+
+footer {
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+footer div {
+    width: 90%;
+    margin: auto;
+}
+
+body div form {
+    display: flex;
+    align-self: center;
+}
+
+.cells-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    padding: 20px 10px;
+}
+
+.cells-container div {
+    width: calc((100% / 10) - 5px);
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid {
+    width: 80%;
+    margin: auto;
+}
