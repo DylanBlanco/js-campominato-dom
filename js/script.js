@@ -1,22 +1,4 @@
-/*// genera 16 numRandom da 1 a 100
-let cellNumber = 100;
-// richiama numRandom
-const bombs = numRandom ();
-function numRandom () {
-    // lista numRandom
-    let bombs = [];
-    // genera num. random da 1 a 100
-    for (let i=1; i < 17; i++) {
-        let randomNumber = generateRandomNumber(1,cellNumber); //Math.floor(Math.random() * 100 )+ 1;
-        console.log (`num. casuale:`, randomNumber.length);
-
-        if (!bombs.includes.apply(randomNumber)) {
-            bombs.push(randomNumber);
-        }
-    }
-}
-
-
+/*
 // condizione fine gioco
 if (partitanonterminata) {
     const numberIncell = parseInt(this.innerText);
@@ -56,17 +38,33 @@ generate.addEventListener(`click`,function (event) {
     }
     console.log(`bombs`, bombs, typeof bombs);
 
+    cellsContainer.innerHTML = ``;
+
     for (let i = 1; i <= cellsNumber; i++) {
         const newCell = document.createElement(`div`);
-        newCell.innerText = i;
+        newCell.innerHTML = i;
+
+        newCell.classList.add(`cell-` + cellsNumber);
+
+        // funzione click
         newCell.addEventListener(`click`, function () {        
-            newCell.classList.toggle(`lightcoral`);
-            console.log(newCell.innerHTML);
+            //this.classList.toggle(`lightcoral`);
+            //console.log(this.innerHTML);
+
+            const cellNumber = parseInt(this.innerText);
+            console.log(cellNumber);
+            
+            // condizione per click su bombs
+            if (bombs.includes(cellNumber)) {
+                this.classList.add(`bomb`);
+            }
+            else {
+                this.classList.add(`not-bomb`);
+            }
         });
         cellsContainer.append(newCell);
     }
 })
-
 
 // funzione numeri random
 function generateRandomNumber(min, max) {

@@ -18,6 +18,14 @@ COLOR
     background-color: lightcoral;
 }
 
+.cells-container > .bomb {
+    background-color: red;
+}
+
+.cells-container > .not-bomb {
+    background-color: lightgreen;
+}
+
 main {
     background-color: #404449;
 }
